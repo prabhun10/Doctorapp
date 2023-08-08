@@ -1,0 +1,22 @@
+<ion-content class="main-view">
+  <div class="overlay"></div>
+  <div class="fully" class="modal_content">
+<div style="background:#fff;border-radius:10px;padding: 10px; ">
+ 
+</div>
+</div>
+<div class="form-style-6">
+  <h1>Verify Mobile Number</h1>
+  <p style="color:grey;">OTP has been sent to your Mobile Number<br>Please Enter it Below</p>
+  <form>
+  <input type="text" name="field1"  [(ngModel)]="mcode" placeholder="Type Verify Code " />
+   
+  <button (click)="verify()" ion-button full class="curved myback mybutton"  >Verify</button>
+<br>
+  <span style="color:red;text-decoration:underline;text-align: center;margin-left:150px;">Resend Code</span>
+  </form>
+  </div>
+
+
+  
+</ion-content>  

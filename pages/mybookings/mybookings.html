@@ -1,0 +1,128 @@
+<!--
+  Generated template for the MybookingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-toolbar  style="padding: 0px;min-height: 0px;"> 
+  <div class="logooveralldash" style="width:100%;">
+    <div class="frsleft" style="float:left;width:30%; "> 
+     <ion-icon  class="frsicon" name="menu" menuToggle  ></ion-icon> 
+    </div>
+    <br>
+    <div   class="secleft" style="float:left;width:40%;border:1px solid bgreenlack;">
+ 
+      <span style="font-size:16px;color:white;" >My Bookings</span>
+      
+    </div>
+    <div  class="thileft" style="float:left;width:30%;"> 
+      
+      <!--<ion-icon name="share"></ion-icon>-->
+
+    </div>
+  </div>  
+</ion-toolbar>
+
+<ion-content padding>
+  <br><br><br> 
+  <ion-segment color="perimary" [(ngModel)]="drhome">
+    <ion-segment-button value="concierge">
+     Past 
+    </ion-segment-button>
+    <ion-segment-button value="visit">
+      Rejected
+    </ion-segment-button>
+  </ion-segment>
+  <div class="card round" margin-top margin-bottom>
+    
+    <div [ngSwitch]="drhome">
+      <ion-grid *ngSwitchCase="'concierge'" padding>
+        <ion-row>
+          <ion-card  *ngFor="let psdta of pastlistdata; let k = index" style="padding: 5px;"> 
+          <table width="100%" border="0" cellpadding="0" cellspacing="0"    style="border-collapse:collapse;margin:0px;padding:0px;" >
+              
+         
+            <tr style="vertical-align: initial;">
+              <td width="23%" *ngIf="psdta.image"><img src="{{psdta.image}}" class="imgk" alt="" align="center" style="border-radius: 50%;"  ></td>
+              <td width="39%" *ngIf="(psdta.image==null || psdta.image=='') "><img src="assets/imgs/roundimage.png" class="imgk" alt="Avatar" align="center" style="border-radius: 50%;"  ></td>
+               
+              <td width="61%" style="vertical-align: top;">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:0px;padding:0px;">
+                 
+                <tr>
+                  <td colspan="2" height="16"><b>{{psdta.first_name}}</b></td>
+                  </tr>
+                <tr>
+                  <td colspan="2"  ><span  style="color:black;"><br><p style="color:green;text-decoration: underline;">Reason of call</p></span></td>
+                  </tr>
+                <tr>
+                  <td colspan="2" height="30" ><span style="color:black;">{{psdta.reason_visit}}</span></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" height="30" ><span style="color:black;">Request on&nbsp;:&nbsp;{{psdta.created_date}}</span></td>
+                    </tr>
+                
+                    <tr>
+                      <td colspan="2" height="30" ><span style="color:black;">Ended on&nbsp;:&nbsp;{{psdta.end_session_date}}</span></td>
+                      </tr>
+                  
+                      <tr>
+                        <td colspan="2">&nbsp;</td>
+                        </tr>
+              </table></td>
+            </tr>
+          
+          
+          </table>
+          </ion-card>
+
+ 
+        </ion-row>
+      </ion-grid>
+  
+      <ion-grid *ngSwitchCase="'visit'" padding>
+        <ion-row>
+          <ion-card  *ngFor="let rjct of rejectlistdata; let m = index" style="padding: 5px;"> 
+            <table width="100%" border="0" cellpadding="0" cellspacing="0"    style="border-collapse:collapse;margin:0px;padding:0px;" >
+                
+           
+              <tr style="vertical-align: initial;">
+                <td width="23%" *ngIf="rjct.image"><img src="{{rjct.image}}" class="imgk" alt="" align="center" style="border-radius: 50%;"  ></td>
+                <td width="39%" *ngIf="(rjct.image==null || rjct.image=='') "><img src="assets/imgs/roundimage.png" class="imgk" alt="Avatar" align="center" style="border-radius: 50%;"  ></td>
+                 
+                <td width="61%" style="vertical-align: top;">
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:0px;padding:0px;">
+                   
+                  <tr>
+                    <td colspan="2" height="16"><b>{{rjct.first_name}}</b></td>
+                    </tr>
+                  <tr>
+                    <td colspan="2"  ><span  style="color:black;"><br><p style="color:green;text-decoration: underline;">Reason of call</p></span></td>
+                    </tr>
+                  <tr>
+                    <td colspan="2" height="30" ><span style="color:black;">{{rjct.reason_visit}}</span></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" height="30" ><span style="color:black;">Request on&nbsp;:&nbsp;{{rjct.created_date}}</span></td>
+                      </tr>
+                  
+                     
+                        <tr>
+                          <td colspan="2">&nbsp;</td>
+                          </tr>
+                </table></td>
+              </tr>
+            
+            
+            </table>
+            </ion-card>
+        </ion-row>
+      </ion-grid> 
+      </div>
+  </div>
+
+
+
+
+</ion-content>

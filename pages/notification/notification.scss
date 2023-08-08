@@ -1,0 +1,64 @@
+page-notification {
+
+    $primary: #7F00FF;
+    $secondary: #00D1B2;
+    $section: #ededed;
+    $muted: #999;
+
+    .button {
+        /*adjust the roundness*/
+        border-radius: 25px;
+        position: absolute;
+        bottom: 19px;
+        left: 79px;
+        height: 51px;
+        
+        width: 53%;
+    background-color: #00b4ff;
+    border: 1px #245ec6 solid;
+    color: white;
+    font-size: 14px;
+    }
+
+
+
+
+
+
+
+    
+    ion-icon {
+        display: inline-block;
+        font-size: 2.2em;
+    }
+
+    
+
+    .toolbar-content-md{
+        background: #51b2f9;
+        height: 56px;
+    }
+
+    ion-icon::before {
+        display: inline-block;
+        
+        margin-top: 15px;
+        margin-left: 11px;
+    }
+     
+      .scroll-content{
+        padding:0px !important;
+    }
+
+ 
+ 
+    ion-card img {
+        display: block;
+        width: 70%; 
+        margin-left: 10px;
+        margin-bottom: 51px;
+ 
+    }
+
+
+}

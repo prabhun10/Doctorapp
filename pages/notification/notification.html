@@ -1,0 +1,36 @@
+
+<ion-toolbar  style="padding: 0px;min-height: 0px;"> 
+  <div class="logooveralldash" style="width:100%;">
+    <div class="frsleft" style="float:left;width:30%; "> 
+     <ion-icon  class="frsicon" name="menu" menuToggle  ></ion-icon> 
+    </div>
+    <br>
+    <div   class="secleft" style="float:left;width:40%;border:1px solid bgreenlack;"> 
+      <span style="font-size:16px;color:white;">Notifications</span>
+      
+    </div>
+    <div  class="thileft" style="float:left;width:30%;"> 
+      
+     
+
+    </div>
+  </div>  
+</ion-toolbar>
+
+
+
+<ion-content padding style="margin-top:50px;background:#e2e2e2;">
+
+<div style="padding: 15px;">
+
+  <div style="width:100%;margin-bottom: 10px;" *ngFor="let d of data; let m = index">
+    <div style="width:100%;background: #fff;padding: 5px;" *ngIf="d.status==1"><p>{{ d.message }}</p>
+    {{d.daysold}} days
+  </div>
+  <div style="width:100%;background: #bcd7e2;;padding: 5px;" *ngIf="d.status==0"><p>{{ d.message }}</p>
+    {{d.daysold}} days
+  </div>
+    </div> 
+  </div>
+
+</ion-content>

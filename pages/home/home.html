@@ -1,0 +1,46 @@
+<ion-toolbar  style="padding: 0px;min-height: 0px;"> 
+    <div class="logooveralldash">
+      <div class="frsleft"> 
+       <ion-icon  class="frsicon" name="menu" menuToggle  ></ion-icon> 
+      </div>
+      <div   class="secleft">
+       <img src="assets/imgs/drnowlogo.png" class="logocls" alt=""  style="margin-left:23px;"  width="130" height="40">
+      </div>
+      <div  class="thileft"> 
+        
+      </div>
+    </div>  
+  </ion-toolbar>
+  
+  <ion-content>
+    Welcome Home
+
+    <br><br><br><br><br><br>
+    <ion-segment color="perimary" [(ngModel)]="drhome">
+      <ion-segment-button value="concierge">
+        Concierge 
+      </ion-segment-button>
+      <ion-segment-button value="visit">
+        Visit
+      </ion-segment-button>
+    </ion-segment>
+  
+    <div class="card round" margin-top margin-bottom>
+    
+    <div [ngSwitch]="drhome">
+      <ion-grid *ngSwitchCase="'concierge'" padding>
+        <ion-row>
+          hhhh
+        </ion-row>
+      </ion-grid>
+  
+      <ion-grid *ngSwitchCase="'visit'" padding>
+        <ion-row>
+          fff
+        </ion-row>
+      </ion-grid> 
+      </div>
+  </div>
+
+  </ion-content>
+  

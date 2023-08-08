@@ -1,0 +1,33 @@
+<ion-header style="height:40px;margin-top:15px;">
+  <table width="100%" height="40">
+      <tr>
+        <td width="10%" align="center"> <ion-icon name="ios-arrow-back-outline" style="color:#005AAC;font-size: 25px;" (click)="closeModal()"></ion-icon>         
+        </td>
+        <td align="left" style="font-size:14px;"><strong>Add Card</strong> 
+        </td>
+      </tr>
+    </table>
+</ion-header>
+
+
+<ion-content style="margin-top: 15px;"> 
+ 
+  <div class="form-style-6">
+    <h1>Pay with credit/bank card</h1>
+    <form #addcardForm="ngForm" (ngSubmit)="addcard(addcardForm.value)">
+    <input type="text" name="cardholdname"  [(ngModel)]="cardholdname" placeholder="Card Holder Name " />
+    <br />
+    <input type="text" name="cardnum"  [(ngModel)]="cardnum" placeholder="Card Number " />
+    <br />
+    <input type="text" name="expdate"  [(ngModel)]="expdate" placeholder="Expiry Date  MM/YY" />
+     
+    <button type="submit" ion-button full class="curved myback mybutton"  >Add Card</button>
+    </form>
+
+    <br>
+    <p  (click)="skip()"  style="color: #00b4ff;text-decoration: underline;font-size: 16px;margin-left: 150px;">Skip</p>
+   
+
+    </div>
+
+</ion-content>

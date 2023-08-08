@@ -1,0 +1,175 @@
+<ion-header style="height:40px;margin-top:15px;">
+  <table width="100%" height="40">
+      <tr>
+        <td width="10%" align="center"> <ion-icon name="ios-arrow-back-outline" style="color:#005AAC;font-size: 25px;" (click)="closeModal()"></ion-icon>         
+        </td>
+        <td align="left" style="font-size:14px;"><strong>Sign Up</strong> 
+        </td>
+      </tr>
+    </table>
+</ion-header> 
+
+
+<ion-content style="margin-top: 15px;"> 
+<form #signupForm="ngForm" (ngSubmit)="mverify(signupForm.value)"  class="form-horizontal mt-3"   >
+
+  <div class="row" style="margin-left: 11px;margin-top: 26px;">
+    <div class="col-11">
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="person"></ion-icon></span>
+        </div>
+        <input type="text" style="height: 45px;" class="form-control form-control-sm-12"  name="firstname" [(ngModel)] = "firstname" placeholder="First Name"  value=""  aria-label="Username" required="required" aria-describedby="basic-addon1">
+    </div>
+
+ 
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="person"></ion-icon><i class="ti-user"></i></span>
+    </div>
+    <input type="text" style="height: 45px;" class="form-control form-control-sm-12"   name="lastname" [(ngModel)] = "lastname" placeholder="Last Name" value=""   aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="mail"></ion-icon><i class="ti-user"></i></span>
+  </div>
+  <input type="text" style="height: 45px;" class="form-control form-control-sm-12"   name="email"  [(ngModel)] = "email" placeholder="Email"  value=""  aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="call"></ion-icon><i class="ti-user"></i></span>
+  </div>
+  <input type="text" style="height: 45px;" class="form-control form-control-sm-12"   name="mobileno"  [(ngModel)] = "mobileno"  placeholder="Mobile"  value=""   aria-label="Username" aria-describedby="basic-addon1">
+</div>
+    
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="calendar"></ion-icon><i class="ti-user"></i></span>
+  </div>
+  <input placeholder="Date of Birth"  style="height: 45px;" name="dob"  [(ngModel)] = "dob"  class="form-control form-control-sm-12" type="text" onfocus="(this.type='date')" id="date">
+
+ </div>
+    
+ 
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="contact"></ion-icon><i class="ti-user"></i></span>
+  </div>
+<select class="form-control"   [(ngModel)]="gender"  name="gender" >  
+  <option  value="" >--select--</option>
+  <option  value="m">Male</option>
+  <option  value="f">FeMale</option>
+  </select>
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="locate"></ion-icon><i class="ti-user"></i></span>
+  </div>
+  <input type="text" style="height: 45px;" class="form-control form-control-sm-12"   name="address1"  [(ngModel)] = "address1"  placeholder="Address1 Line1"  value=""   aria-label="dob" aria-describedby="basic-addon1">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="locate"></ion-icon><i class="ti-user"></i></span>
+  </div>
+  <input type="text" style="height: 45px;" class="form-control form-control-sm-12"   name="address2"  [(ngModel)] = "address2"  placeholder="Address1 Line2"  value=""   aria-label="dob" aria-describedby="basic-addon1">
+</div>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="locate"></ion-icon><i class="ti-user"></i></span>
+  </div>
+  <input type="text" style="height: 45px;" class="form-control form-control-sm-12"   name="zipcode"  [(ngModel)] = "zipcode"  placeholder="Zip code"  value=""   aria-label="dob" aria-describedby="basic-addon1">
+</div>
+
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="locate"></ion-icon><i class="ti-user"></i></span>
+  </div>
+   
+
+  <select class="form-control"   [(ngModel)]="state" (change)="checkstate()" name="state"   >  
+    <option   value=""  >--select--</option>
+    <option *ngFor="let st of statename;"   value="{{st.id}}"   >{{st.name}}</option>
+    </select>
+
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="locate"></ion-icon><i class="ti-user"></i></span>
+  </div>
+  
+  <select class="form-control"   [(ngModel)]="city"  name="city" class="form-control form-control-sm-12" >  
+    <option  value="">--select--</option>
+    <option *ngFor="let lt of cityname;" value="{{lt.id}}">{{lt.name}}</option>
+    </select>
+
+
+
+  
+</div>
+
+
+
+
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="lock"></ion-icon><i class="ti-user"></i></span>
+  </div>
+  <input type="password" style="height: 45px;" class="form-control form-control-sm-12"   name="password"  [(ngModel)] = "password"  placeholder="Password"  value=""   aria-label="password" aria-describedby="basic-addon1">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="lock"></ion-icon><i class="ti-user"></i></span>
+  </div>
+  <input type="password" style="height: 45px;" class="form-control form-control-sm-12"   name="conformpassword"  [(ngModel)] = "conformpassword"  placeholder="Conform Password"  value=""   aria-label="password" aria-describedby="basic-addon1">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="contact"></ion-icon><i class="ti-user"></i></span>
+  </div>
+  <input type="text" style="height: 45px;" class="form-control form-control-sm-12"   name="brorefid"  [(ngModel)] = "brorefid"  placeholder="Broker Ref Id"  value=""   aria-label="password" aria-describedby="basic-addon1">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="contact"></ion-icon><i class="ti-user"></i></span>
+  </div>
+  <input type="text" style="height: 45px;" class="form-control form-control-sm-12"   name="agentrefid"  [(ngModel)] = "agentrefid"  placeholder="Agent Ref Id"  value=""   aria-label="password" aria-describedby="basic-addon1">
+</div>
+
+<div class="form-group row">
+  <div class="col-md-12"><br>
+      <div >
+           
+          <label ><input type="checkbox" name="remembers" value="Y"  [(ngModel)]="checkedbtn"   >&nbsp;&nbsp;I accept the <span style="color:red;text-decoration: underline;">Terms and Conditions</span></label>
+       </div>
+  </div><br>
+</div>
+
+
+
+<div class="form-group text-center">
+  <div class="col-xs-12 pb-3">
+      <input type="submit" class="btn btn-block btn-sm-12 btn-info font-bold"     [disabled]="!checkedbtn"   value="Next"  style="font-size:13px;" >
+  </div>
+</div> 
+    
+       
+    </div>
+  </div>
+
+</form>
+</ion-content>

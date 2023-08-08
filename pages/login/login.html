@@ -1,0 +1,49 @@
+<ion-content   hide-toolbar="true">
+  <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background: #51B2F8;">
+    <div class="auth-box">
+        <div id="loginform">
+            <div class="logo">
+                <span class="db"><img src="assets/imgs/drnowlogo.png" alt="logo" width="150" align="center"><!--<img src="assets/images/logos/cwa_logo.png" alt="logo" width="100" />--></span>                       
+            </div>
+            <!-- Form -->
+            <div class="row">
+                <div class="col-12">
+                    <form class="form-horizontal mt-3" id="loginform" action="" method="post">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><ion-icon  style="font-size: 14px;" name="person"></ion-icon><i class="ti-user"></i></span>
+                            </div>
+                            <input type="text" style="height: 45px;" class="form-control form-control-sm-12" [(ngModel)]="username" name="username" value="" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"  id="basic-addon2"><ion-icon style="font-size: 14px;" name="create"></ion-icon><i class="ti-pencil"></i></span>
+                            </div>
+                            <input type="password" style="height: 45px;" class="form-control form-control-sm-12" [(ngModel)]="password" name="password" value="" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12"><br>
+                                <div class="custom-control custom-checkbox">
+                                     <input type="checkbox" name="remember" value="Y" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label" for="customCheck1">Remember me</label>
+                                 </div>
+                            </div><br>
+                        </div>
+                        <div class="form-group text-center">
+                            <div class="col-xs-12 pb-3">
+                                <button class="btn btn-block btn-sm-12 btn-info font-bold" (click)="login()"   name="wasilogin" type="submit" style="font-size:13px;" >Log In</button>
+                            </div>
+                        </div> 
+                        <div class="form-group mb-0 mt-2">
+                         <p>Dont have an account yet?<span (click)="signup()" style="color:blue;font-weight:bold;"> Sign Up </span></p> 
+                        </div>
+                         
+                    </form>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    </div>
+</ion-content>
+ 

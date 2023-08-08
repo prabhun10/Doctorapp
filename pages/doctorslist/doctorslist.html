@@ -1,0 +1,81 @@
+<!-- 
+  Generated template for the DoctorslistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-toolbar  style="padding: 0px;min-height: 0px;"> 
+  <div class="logooveralldash">
+    <div class="frsleft" style="float:left; "> 
+     <ion-icon  class="frsicon" name="menu" menuToggle  ></ion-icon> 
+    </div>
+    <br>
+    <div   class="secleft" style="float:left;">
+      <span style="font-size: 18px;margin-left: 49px;"><img src="assets/imgs/whitelogo.png" alt="logo" width="180" align="center"></span>
+    </div>
+    <div  class="thileft" style="float:right;"> 
+      
+
+    </div>
+  </div>  
+</ion-toolbar>
+
+<ion-content padding>
+<div style="width:100%;height:100%;margin-top: 50px;">
+  <div class="topnav">
+     
+    <input type="text" placeholder="Search..">
+    <ion-icon name="search"  class="search"  ></ion-icon>
+     <br>
+  </div>
+  <ion-card *ngFor="let data of dctrlistdata; let i = index">
+
+   
+  
+
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0"  (click)="gotodctrreq(data.id)" style="border-collapse:collapse;margin:0px;padding:0px;" >
+      
+       
+      <tr >
+        <td width="39%" *ngIf="data.image"><img src="{{data.image}}" class="imgk" alt="Avatar" align="center" style="border-radius: 50%;"  ></td>
+        <td width="39%" *ngIf="(data.image==null || data.image=='') "><img src="assets/imgs/roundimage.png" class="imgk" alt="Avatar" align="center" style="border-radius: 50%;"  ></td>
+         
+        <td width="61%"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:0px;padding:0px;">
+          <tr>
+            <td colspan="2">&nbsp;</td>
+            </tr>
+          <tr>
+            <td colspan="2" height="16"><b>{{data.first_name}}</b></td>
+            </tr>
+          <tr>
+            <td colspan="2" height="16"><span  style="color:#607d8b;"><br>Speciality: {{data.splname}}</span></td>
+            </tr>
+          <tr>
+            <td colspan="2" height="16"><span style="color:#607d8b;"><br>Experience: {{data.experience}} yrs</span></td>
+            </tr>
+          <tr>
+            <td width="4%" align="center" valign="top" > <span ><ion-icon name="medkit" style="color:red;font-size: 18px;"></ion-icon></span></td>
+            <td width="96%" valign="bottom" style="padding-left: 10px;"><span>{{data.clinic_name}}</span></td>
+          </tr>
+          <tr>
+            <td> <ion-icon name="clock" style="color:red;font-size:18px;"></ion-icon></td>
+            <td valign="bottom" style="padding-left: 10px;"><span>Upto 30 Minutes</span></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+    
+    
+    </table>
+    <div style="border:1px solid #e9e9e9;width:93%;margin-left: 10px;"></div>
+    <br>
+  </ion-card>
+</div>
+
+
+
+</ion-content>

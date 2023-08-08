@@ -1,0 +1,208 @@
+<!--<ion-toolbar  style="padding: 0px;min-height: 0px;"> 
+  <div class="logooveralldash">
+    <div class="frsleft" style="float:left; "> 
+     <ion-icon  class="frsicon" name="menu" menuToggle  ></ion-icon> 
+    </div>
+    <br>
+    <div   class="secleft" style="float:left;">
+      <b style="font-size: 18px;margin-left: 49px;">Select Your Service</b>
+    </div>
+    <div  class="thileft"> 
+      
+    </div>
+  </div>  
+</ion-toolbar>-->
+
+
+<ion-toolbar  style="padding: 0px;min-height: 0px;"> 
+  <div class="logooveralldash" style="width:100%;">
+    <div class="frsleft" style="float:left;width:30%; "> 
+     <ion-icon  class="frsicon" name="menu" menuToggle  ></ion-icon> 
+    </div>
+    <br>
+    <div   class="secleft" style="float:left;width:40%;border:1px solid bgreenlack;">
+      <span style="font-size:16px;color:white;" *ngIf="dctrlistdata==''">Select Your Service</span>
+      <span style="font-size:16px;color:white;" *ngIf="dctrlistdata!=''">Home</span>
+      
+    </div>
+    <div  class="thileft" style="float:left;width:30%;"> 
+      
+    
+      <ion-buttons end> <ion-badge  *ngIf="data>0"  style="border-radius:40% !important;padding:5px;position: relative;left: 48px;z-index: 2000;top: 3px;" color="favorite" item-end>{{data}}</ion-badge>
+        <button ion-button tappable (click)="presentNotifications();">
+          <ion-icon name="notifications-outline">
+           
+          </ion-icon>
+        </button> 
+      </ion-buttons>
+
+    </div>
+  </div>  
+</ion-toolbar>
+
+
+
+
+
+<ion-content padding>
+
+
+
+
+
+
+  <div    class="overlay" *ngIf="dctrlistdata==''" >
+    <button class="button" id="join" (click)="godoctr()" >Concierge Doctor </button>
+  </div>
+
+  <div class="dd"   *ngIf="dctrlistdata!=''"  >
+
+    <br><br><br> 
+    <ion-segment color="perimary" [(ngModel)]="drhome">
+      <ion-segment-button value="concierge">
+        Your Doctor 
+      </ion-segment-button>
+      <ion-segment-button value="visit">
+        Current Booking
+      </ion-segment-button>
+    </ion-segment>
+  
+    <div class="card round" margin-top margin-bottom>
+    
+    <div [ngSwitch]="drhome">
+      <ion-grid *ngSwitchCase="'concierge'" padding>
+        <ion-row>
+          
+
+          <div class="section"  >
+            <div class="container">
+              <div class="columns">
+                <div class="column is-4 is-offset-4">
+                  <div class="card" *ngFor="let data of dctrlistdata; let i = index">
+                    <div class="header">
+                      <div class="avatar" *ngIf="data.image">
+                        <img src="{{data.image}}" alt="">
+                      </div>
+                      <div class="avatar" *ngIf="(data.image==null || data.image=='')">
+                        <img src="assets/imgs/roundimage.png" alt="">
+                      </div>
+                    </div> 
+                    <div class="card-body" style="background-color: white;">
+                      <div class="user-meta has-text-centered">
+                        <h3 class="username">{{data.first_name}} </h3>
+                        <p class="position">   <ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon></p>
+                        <p class="position" *ngIf="data.clinic_name!=''"> <ion-icon name="medkit" style="color:red;font-size: 18px;"></ion-icon>&nbsp; {{data.clinic_name}}</p>
+                      </div>
+                      <table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:0px;padding:0px;border:1px solid white;">
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td colspan="2" align="left"><span style="font-weight:bold;font-size: 16px;">Speciality</span></td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                        </tr>
+                        <tr> 
+                          <td>&nbsp;</td>
+                          <td colspan="4" align="center" style="color:#4a8bfc;">{{data.splname}}</td>
+                          <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td colspan="2" align="left"><span style="font-weight:bold;font-size: 16px;">Qualifications</span></td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td colspan="2" align="right"><span style="font-weight:bold;font-size: 16px;">Experience</span></td>
+                        </tr>
+                        <tr>
+                          <td colspan="3" align="left" style="color:#4a8bfc;">{{data.qualification}}</td>
+                          <td colspan="3" align="right" style="color:#4a8bfc;">{{data.experience}}&nbsp;Years</td>
+                        </tr>
+                        <tr>
+                          <td align="center" colspan="6" >
+                          
+                            <button class="mbtn blue" (click)="bookcall(data.dctrid)"  >Book a Call</button>
+      
+                          <!--  <button type="submit"     (click)="requestsend(this.dctrind_id)">Send Request</button>-->
+                          
+                          </td>
+                        </tr>
+                      </table>
+                     
+                    </div>
+      
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+         
+      </div>
+          
+
+
+        </ion-row>
+      </ion-grid>
+  
+      <ion-grid *ngSwitchCase="'visit'" padding>
+        <ion-row>
+          <ion-card  *ngFor="let bkdata of bklistdata; let j = index">
+
+   
+  
+
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0"    style="border-collapse:collapse;margin:0px;padding:0px;" >
+              
+              <tr>
+                <td colspan="2">&nbsp;</td>
+                </tr>
+              <tr >
+                <td width="39%" *ngIf="bkdata.image"><img src="{{bkdata.image}}" class="imgk" alt="" align="center" style="border-radius: 50%;"  ></td>
+                <td width="39%" *ngIf="(bkdata.image==null || bkdata.image=='') "><img src="assets/imgs/roundimage.png" class="imgk" alt="Avatar" align="center" style="border-radius: 50%;"  ></td>
+                 
+                <td width="61%"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:0px;padding:0px;">
+                  <tr>
+                    <td colspan="2">&nbsp;</td>
+                    </tr>
+                  <tr>
+                    <td colspan="2" height="16"><b>{{bkdata.first_name}}</b></td>
+                    </tr>
+                  <tr>
+                    <td colspan="2"  ><span  style="color:black;"><br>Type&nbsp;:&nbsp;{{bkdata.booking_type}}</span></td>
+                    </tr>
+                  <tr>
+                    <td colspan="2"  ><span style="color:black;"><br>Date&nbsp;:&nbsp;{{bkdata.created_date}} </span></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2"  ><span style="color:black;"><br>Time&nbsp;:&nbsp;{{bkdata.mytime}} </span></td>
+                      </tr>
+                  
+                   
+                </table></td>
+              </tr>
+            
+            
+            </table>
+            <p style="color:green;margin-left: 12px;">Reason of call</p>
+             
+            <br>
+          </ion-card>
+        </ion-row>
+      </ion-grid> 
+      </div>
+  </div>
+
+
+
+
+
+  </div>
+
+
+  
+  
+
+
+
+  
+  
+</ion-content>

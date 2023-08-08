@@ -1,0 +1,16 @@
+<ion-menu type="overlay"  menuClose side="left" [content]="sidemenu" style="margin-top:55px;opacity:0.97;z-index:1000;">       
+    <button style="background: #2f323e;color:white; "  ion-item (click)="homepage()"><ion-icon name="clock"></ion-icon><span style="margin-left:10px;"> Home</span></button>
+    
+    <button style="background: #2f323e;color:white; "   ion-item (click)="mybooking()"><ion-icon name="bookmarks"></ion-icon><span style="margin-left:10px;"> My Bookings</span></button>
+    
+    <button style="background: #2f323e;color:white; "  ion-item (click)="homepage()"><ion-icon name="medkit"></ion-icon><span style="margin-left:10px;"> My Health</span></button>
+    <button style="background: #2f323e;color:white; "  ion-item (click)="homepage()"><ion-icon name="contact"></ion-icon><span style="margin-left:10px;"> My Profile</span></button>
+    <button style="background: #2f323e;color:white; "  ion-item (click)="getnotify()"><ion-icon name="notifications"></ion-icon><span style="margin-left:10px;"> Notifications</span></button>
+    <button style="background: #2f323e;color:white; "  ion-item (click)="homepage()"><ion-icon name="cash"></ion-icon><span style="margin-left:10px;"> Payment</span></button>  
+    <button style="background: #2f323e;color:white; "  ion-item (click)="homepage()"><ion-icon name="trophy"></ion-icon><span style="margin-left:10px;"> About  Us</span></button>
+    <button style="background: #2f323e;color:white; "  ion-item (click)="share()"><ion-icon name="share-alt"></ion-icon><span style="margin-left:10px;">Share Dr Now (For Doctor)</span></button>
+    <button style="background: #2f323e;color:white; "  ion-item (click)="logout()"><ion-icon name="power"></ion-icon><span style="margin-left:10px;"> Logout</span></button> 
+</ion-menu> 
+<ion-nav #sidemenu [root]="rootPage"></ion-nav> 
+
+ 
